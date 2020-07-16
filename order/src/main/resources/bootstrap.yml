@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      #配置中心地址
+      uri: http://127.0.0.1:8888/
+      #配置环境
+      profile: dev
+      #配置文件分支
+      label: master
+      #配置文件name（application）
+      name: order
+      #application(name)-profile.properties
+       #    请求          简介，概述
+
+
+

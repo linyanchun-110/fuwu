@@ -1,0 +1,17 @@
+server:
+  port: 8888
+  #配置服务名
+spring:
+  application:
+    name: hzit-config
+#连接github
+  cloud:
+    config:
+      server:
+        git:
+          username: linyanchun-110
+          password: lin199712154353
+          #默认分支
+          default-label: master
+          #项目地址
+          uri: https://github.com/linyanchun-110/server-config.git

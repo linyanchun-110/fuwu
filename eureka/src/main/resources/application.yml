@@ -1,0 +1,28 @@
+server:
+  port: 8088
+
+##服务名称
+spring:
+  application:
+    name: hzit-eureka
+    #开启认证
+  security:
+    basic:
+      enable: true
+      #配置用户信息
+    user:
+      name: lin
+      password: 123456
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    ##是否注册自己，这里本身就是注册中心，等到放到集群在为true,是否获取注册信息，这里不需要注册
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+###客户端调用地址
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8088/eureka/
+  server:
+    enable-self-preservation: true

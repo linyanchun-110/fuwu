@@ -1,0 +1,31 @@
+
+order:
+  goods:
+    url: http://192.168.1.146:8089
+server:
+  port: 8010
+spring:
+  application:
+    name: order
+#fegin 没有服务实例的时候，不使用负载均衡
+#ItemFeignClient:
+#  ribbon:
+#    eureka:
+#      enabled: false
+#feign:
+#  hystrix:
+#    #开启feign的hystrix支持,默认是false
+#    enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lin:123456@127.0.0.1:8088/eureka
+      ##注册
+    register-with-eureka: true
+    #检索服务
+    fetch-registry: true
+management:
+  endpoint:
+    web:
+     exposure:
+       include: "*"
